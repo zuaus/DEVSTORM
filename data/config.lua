@@ -2,29 +2,36 @@ do local _ = {
   admins = {},
   disabled_channels = {},
   enabled_plugins = {
+    "plog",
+    "del",
+    "mee",
+    "addreply",
     "banhammer",
-    "groupmanager",
+    "help",
     "msg-checks",
-    "plugins",
-    "tools",
-    "fun",
-    "info",
-    "me",
-    "dell",
-    "cleanbot",
-    "rp"
+    "repstorm",
+    "stormsup",
+    "sudo",
+    "phony",
+    "tools"
   },
-  info_text = "》Beyond Reborn v4.0\nAn advanced administration bot based on https://valtman.name/telegram-cli\n\n》https://github.com/BeyondTeam/BDReborn \n\n》Admins :\n》@SoLiD ➣ Founder & Developer《\n》@Makan ➣ Developer《\n》@Rixel ➣ Developer 《\n》@Exacute ➣ Developer《\n》@To0fan ➣ Developer《\n》@CiveY ➣ Developer\n》@ArmanDev ➣ Manager《\n》@MrPars ➣ Manager《\n\n》Special thanks to :\n》@Vysheng\n》@MrHalix\n》@K_a_I_i_I_i_n_u_x\n》@Nero_Dev\n》And Beyond Team Members\n\n》Our channel :\n》@BeyondTeam《\n\n》Our website :\n》http://BeyondTeam.ir\n",
+  info_text = ":small_blue_diamond: ŚᎧÛℜϾËŚ ŚͲᎧℜⱮ v 1  :small_orange_diamond:\n\n\n:link: | [https://telegram.me/TEAMSTORM]\n\n\n🔗 | [ https://github.com/NOVAR1/STORM_cli_api.git]\n\n\n🔗 | Đ€V ŚᎧÛℜϾËS\n\n\n:link: | ĐËV : @TAHAJ20\n\n\n:link: | ĐËV : @N0VAR\n\n\n :link: | ÇH BØT : @TAEMSTORM\n\n\n :link: | ĐÆ : @TAHAJ20_BOT\n\n\n :link: | GRØP : https://t.me/joinchat/FklctEH6wIF8sFUZFMgEaQ\n\n\n\n اتمنا التوفيق للجميع :green_heart:\n\n.\n",
   moderation = {
     data = "./data/moderation.json"
   },
   sudo_users = {
-    30742221,
-    367167027,
-    333768928,
-    117094188,
-    283167540
+    373906612,
+    321050917,
+    380151571
   }
 }
 return _
 end
+Telegram
+,"$(Ꮏ Ꭼ Ꭿ Ꮇ Ꮪ Ꮏ Ꮻ Ꭱ Ꮇ)^"
+اﻫﻟا ﭘكم في ﭰناه TEAM STORM
+----------------------------------
+ﭰنــاه خاﺻــﮭه ﭘگل اﺣتياجات المطور
+#ﻧشر ﺳورسات<√>
+#ﻧشر ارﭰام اﻣرﯾﮔﻴﮩﮥ<√>
+#ﻧشر ﺳيرﻓرات<...

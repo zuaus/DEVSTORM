@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd $HOME/BDReborn
-token="342647859:AAHUtvmjo4GgI9zLOyFFYCCICGgeKkt3rps"
+token=""
 install() {
 	    cd tg
 		sudo add-apt-repository ppa:ubuntu-toolchain-r/test
@@ -34,7 +34,7 @@ if [ ! $token ]; then
   echo -e "\e[1;36mToken Not found\e[0m"
  exit 1
  fi
-   curl "https://api.telegram.org/bot342647859:AAHUtvmjo4GgI9zLOyFFYCCICGgeKkt3rps/sendmessage" -F 
+   curl "https://api.telegram.org/bot"$token_"/sendmessage" -F
     ./tg/tgcli -s ./bot/bot.lua -p PROFILE --bot=$token
 
 fi

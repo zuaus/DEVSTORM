@@ -1,59 +1,24 @@
 #!/usr/bin/env bash
 
-cd $HOME/STORM
-
+cd $HOME/BDReborn
+token="342647859:AAHUtvmjo4GgI9zLOyFFYCCICGgeKkt3rps"
 install() {
 	    cd tg
-		sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-		sudo apt-get install g++-4.7 -y c++-4.7 -y
-		sudo apt-get update
-		sudo apt-get upgrade
-		sudo apt-get install libreadline-dev -y libconfig-dev -y libssl-dev -y lua5.2 -y liblua5.2-dev -y lua-socket -y lua-sec -y lua-expat -y libevent-dev -y make unzip git redis-server autoconf g++ -y libjansson-dev -y libpython-dev -y expat libexpat1-dev -y
-		sudo apt-get install screen -y
-		sudo apt-get install tmux -y
-		sudo apt-get install libstdc++6 -y
-		sudo apt-get install lua-lgi -y
-		sudo apt-get install libnotify-dev -y
-		sudo service redis-server restart
+		sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+		sudo apt-get install g++-4.7 c++-4.7
+		sudo apt-get update		
+        sudo apt-get upgrade
+		sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev make unzip git redis-server autoconf g++ libjansson-dev libpython-dev expat libexpat1-dev
+		sudo apt-get install lua-lgi
+		sudo apt-get install libnotify-dev
+		sudo apt-get install screen
+		sudo apt-get install tmux
 		wget https://valtman.name/files/telegram-cli-1222
 		mv telegram-cli-1222 tgcli
 		chmod +x tgcli
 		cd ..
 		chmod +x bot
 		chmod +x tg
-}
-
-function print_logo() {
-	echo -e "
- __   ___________   ___     _____     __  __
-/  |  |___   ___|  / _ \   | ___ }   |  \/  |
-\_ \      | |     | | | |  | |_) }   | |\/| |
- _) |     | |     | |_| |  |  _< \   | |  | |
-|__/      |_|      \___/   |_|  \_\  |_|  |_|
- BY @TAHAJ20 DEV : TAHAJ20            "
-	echo -e " "
-	echo -e " "
-	echo -e " "
-	echo -e " "
-	echo -e " "
-}
-
-function logo_play() {
-    declare -A txtlogo
-    seconds=" "
-    txtlogo[1]=" "
-    txtlogo[2]=" "
-    txtlogo[3]=" "
-    txtlogo[4]=" "
-    printf "\033[38;5;600m\t"
-    for i in ${!txtlogo[@]}; do
-        for x in `seq 0 ${#txtlogo[$i]}`; do
-            printf "${txtlogo[$i]:$x:1}"
-            sleep $seconds
-        done
-        printf "\n\t"
-    done
-    printf "\n"
 }
 
 if [ "$1" = "install" ]; then
@@ -65,26 +30,47 @@ if [ ! -f ./tg/tgcli ]; then
     echo "Run $0 install"
     exit 1
  fi
+if [ ! $token ]; then
+  echo -e "\e[1;36mToken Not found\e[0m"
+ exit 1
+ fi
+   curl "https://api.telegram.org/bot342647859:AAHUtvmjo4GgI9zLOyFFYCCICGgeKkt3rps/sendmessage" -F 
+    ./tg/tgcli -s ./bot/bot.lua -p PROFILE --bot=$token
 
-
-   print_logo
-   echo -e "\033[38;5;208m"
-   echo -e "
- __   ___________   ___     _____     __  __
-/  |  |___   ___|  / _ \   | ___ }   |  \/  |
-\_ \      | |     | | | |  | |_) }   | |\/| |
- _) |     | |     | |_| |  |  _< \   | |  | |
-|__/      |_|      \___/   |_|  \_\  |_|  |_|
- BY @TAHAJ20 DEV : TAHAJ20            
-"
-   echo -e "    "
-   echo -e "   "
-   echo -e "   "
-   echo -e "     "
-   echo -e "\033[0;00m"
-   echo -e "\e[36m"
-   logo_play
-   #sudo service redis-server restart
-   #./tg/tgcli -s ./bot/bot.lua -l 1 -E $@
-   ./tg/tgcli -s ./bot/bot.lua $@
 fi
+
+# Now All Argument Support after ./beyond.sh !
+#	Arguments :
+#			#			#			#			#			#			#			#			#			#
+#  --phone/-u                           specify username (would not be asked during authorization)
+#  --verbosity/-v                       increase verbosity (0-ERROR 1-WARNIN 2-NOTICE 3+-DEBUG-levels)
+#  --enable-msg-id/-N                   message num mode
+#  --config/-c                          config file name
+#  --profile/-p                         use specified profile
+#  --wait-dialog-list/-W                send dialog_list query and wait for answer before reading input
+#  --disable-colors/-C                  disable color output
+#  --disable-readline/-R                disable readline
+#  --alert/-A                           enable bell notifications
+#  --daemonize/-d                       daemon mode
+#  --logname/-L <log-name>              log file name
+#  --username/-U <user-name>            change uid after start
+#  --groupname/-G <group-name>          change gid after start
+#  --disable-output/-D                  disable output
+#  --tcp-port/-P <port>                 port to listen for input commands
+#  --udp-socket/-S <socket-name>        unix socket to create
+#  --exec/-e <commands>                 make commands end exit
+#  --disable-names/-I                   use user and chat IDs in updates instead of names
+#  --help/-h                            prints this help
+#  --accept-any-tcp                     accepts tcp connections from any src (only loopback by default)
+#  --disable-link-preview               disables server-side previews to links
+#  --bot/-b                             bot mode
+#  --json                               prints answers and values in json format
+#  --permanent-msg-ids                  use permanent msg ids
+#  --permanent-peer-ids                 use permanent peer ids
+#			#			#			#			#			#			#			#			#			#
+#Example To launch with second profile :
+# ./beyond.sh -p second-profile
+
+#			  OR
+
+# ./beyond.sh --profile second-profile

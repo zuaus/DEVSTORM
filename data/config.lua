@@ -10,7 +10,7 @@ do local _ = {
     "help",
     "msg-checks",
     "repstorm",
-    "groupmanager",
+    "STORM",
     "sudo",
     "phony",
     "tools"

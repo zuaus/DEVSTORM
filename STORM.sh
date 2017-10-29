@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd $HOME/STORM
-token="338370797:AAFjOwKYik3oMwLOf3MQI7-ZeYqQzTO9oBc"
+token="TOKEN"
 install() {
      cd tg
   sudo add-apt-repository ppa:ubuntu-toolchain-r/test

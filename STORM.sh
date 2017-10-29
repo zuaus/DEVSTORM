@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd $HOME/BDReborn
-token="342647859:AAHUtvmjo4GgI9zLOyFFYCCICGgeKkt3rps"
+token="التوكن"
 install() {
      cd tg
   sudo add-apt-repository ppa:ubuntu-toolchain-r/test

@@ -75,7 +75,7 @@ local function delallchats(msg)
     for i=1, #names do 
       redis:hdel(hash,names[i]) 
     end 
-    return "saved!" 
+    return "⛥┋تم حذف الردود جميعها" 
    else 
    return 
   end 

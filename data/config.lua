@@ -23,7 +23,7 @@ do local _ = {
     "sudo",
     "tools"
   },
-  info_text = "THE SOREC STORM IS ONLI A GROPS 30K \n\n\n⛥| [https://github.com/zuaus/DEVSTORM.git]\n\n\n⛥| Đ€V ŚᎧÛℜϾËS\n\n\n⛥| ĐËV : @TAHAJ20\n\n\n⛥| ĐËV : @TAHAJ20_BOT\n\n\n⛥| ÇH BØT : @TEAMSTORM\n\n\n⛥| ĐÆ : @TAHAJ20_BOT\n\n\n⛥| GRØP : https://t.me/joinchat/FklctEH6wIF8sFUZFMgEaQ\n\n\n\n اتمنا التوفيق للجميع \n\n`⛥ ~~ ~~ ~~ ~~ ~~ ⛥`\n",
+  info_text = "THE SOREC STORM IS ONLI A GROPS 30K \n\n\n📍 اهــلا بك عــزيزي\nٴ♦️•••••••••••⛥❉⛥•••••••••••♦️\n\n⛥┋ＤＥＶ=➤ @TAHAJ20\n\n⛥┋ＤＥＶ=➤ @DEV_STORM \n\n⛥┋ＣＨ =➤ @TEAMSTORM \n\n⛥┋Đ Æ =➤ @TAHAJ20_BOT \n\n⛥┋https://github.com/zuaus/DEVSTORM \n\nٴ♦️•••••••••••⛥❉⛥•••••••••••♦️\n\nبل توفيق للجميع انشالله 👲",
   moderation = {
     data = "./data/moderation.json"
   },

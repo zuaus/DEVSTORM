@@ -10,10 +10,6 @@ if matches[1] == "المطور" or matches[1] == "مطور" or matches[1] == "``
 ⛥┋ＤＥＶ=➤ @N0VAR 
 
 ⛥┋ＣＨ =➤ @TEAMSTORM
-       
-⛥┋ＤＥＶ=➤ @DEV_STORM
-        
-⛥┋Đ Æ =➤ @TAHAJ20_BOT
 
 ⛥┋https://github.com/zuaus/DEVSTORM
 

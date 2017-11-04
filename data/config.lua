@@ -1,12 +1,10 @@
 do local _ = {
   admins = {
     {
-      430041821,
-      "@q1111p"
+      
     },
     {
-      459412111,
-      "@tagjtagjbot"
+     
     }
   },
   disabled_channels = {},

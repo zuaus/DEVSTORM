@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd $HOME/STORM
-
+token_="351460214:AAHEXlncjPyhF22zlKToJa6fAGQlnJU8D6E" 
 install() {
 	    cd tg
 		sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
@@ -65,8 +65,16 @@ if [ ! -f ./tg/tgcli ]; then
     echo "Run $0 install"
     exit 1
  fi
+if [ ! $token_ ]; then
+echo -e ""
 
+echo -e ""
 
+  echo -e "\e[31;1mToken Not found\e"
+
+ exit 1
+
+ fi
    print_logo
    echo -e "\033[38;5;208m"
    echo -e "
@@ -85,6 +93,9 @@ if [ ! -f ./tg/tgcli ]; then
    echo -e "\e[36m"
    logo_play
    #sudo service redis-server restart
-   #./tg/tgcli -s ./bot/bot.lua -l 1 -E $@
-   ./tg/tgcli -s ./bot/bot.lua $@
+   #./tg/tgcli -s ./bot/bot.lua -l 1 -E $@ --bot=$token_
+curl "https://api.telegram.org/bot"$token_"/sendmessage" -F
+
+./tg/tgcli -s ./bot/bot.lua $@ --bot=$token_
+
 fi

@@ -1,4 +1,4 @@
---Begin msg_checks.lua By @SoLiD
+--Begin msg_checks.lua By @TAHAJ20 
 local TIME_CHECK = 2
 local function anti_flood(msg)
 local data = load_data(_config.moderation.data)

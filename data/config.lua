@@ -12,7 +12,6 @@ do local _ = {
     "plog",
     "addreply",
     "msg-checks",
-    "repstorm",
     "sudo",
     "addgruop",
     "kickdel",

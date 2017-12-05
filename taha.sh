@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd $HOME/DEVSTIRM
+cd $HOME/DEVSTORM
 token="TOKEN"
 install() {
      cd tg

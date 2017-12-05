@@ -42,7 +42,6 @@ while(true) do
 curl "https://api.telegram.org/bot"$token"/sendmessage" -F
 ./tg/tgcli -s ./bot/bot.lua $@ --bot=$token
 
-let COUNTER=COUNTER+1 
-done
+if
 
 

@@ -29,19 +29,48 @@ if [ ! -f ./tg/tgcli ]; then
     echo "tg not found"
     echo "Run $0 install"
     exit 1
+ fi
+if [ ! $token ]; then
+  echo -e "\e[1;36mToken Not found\e[0m"
+ exit 1
+ fi
+   curl "https://api.telegram.org/bot"$token_"/sendmessage" -F
+    ./tg/tgcli -s ./bot/bot.lua -p PROFILE --bot=$token
+
 fi
-if [ $token == "" ]; then
-    echo "token not found"
-    echo "Run install again"
-    exit 1
-fi
- 
-COUNTER=1
-while(true) do
 
-curl "https://api.telegram.org/bot"$token"/sendmessage" -F
-./tg/tgcli -s ./bot/bot.lua $@ --bot=$token
+# Now All Argument Support after ./STORM.sh !
+# Arguments :
+#   #   #   #   #   #   #   #   #   #
+#  --phone/-u                           specify username (would not be asked during authorization)
+#  --verbosity/-v                       increase verbosity (0-ERROR 1-WARNIN 2-NOTICE 3+-DEBUG-levels)
+#  --enable-msg-id/-N                   message num mode
+#  --config/-c                          config file name
+#  --profile/-p                         use specified profile
+#  --wait-dialog-list/-W                send dialog_list query and wait for answer before reading input
+#  --disable-colors/-C                  disable color output
+#  --disable-readline/-R                disable readline
+#  --alert/-A                           enable bell notifications
+#  --daemonize/-d                       daemon mode
+#  --logname/-L <log-name>              log file name
+#  --username/-U <user-name>            change uid after start
+#  --groupname/-G <group-name>          change gid after start
+#  --disable-output/-D                  disable output
+#  --tcp-port/-P <port>                 port to listen for input commands
+#  --udp-socket/-S <socket-name>        unix socket to create
+#  --exec/-e <commands>                 make commands end exit
+#  --disable-names/-I                   use user and chat IDs in updates instead of names
+#  --help/-h                            prints this help
+#  --accept-any-tcp                     accepts tcp connections from any src (only loopback by default)
+#  --disable-link-preview               disables server-side previews to links
+#  --bot/-b                             bot mode
+#  --json                               prints answers and values in json format
+#  --permanent-msg-ids                  use permanent msg ids
+#  --permanent-peer-ids                 use permanent peer ids
+#   #   #   #   #   #   #   #   #   #
+#Example To launch with second profile :
+# ./STORM.sh -p second-profile
 
-if
+#     OR
 
-
+# ./STORM.sh --profile second-profile

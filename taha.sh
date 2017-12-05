@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd $HOME/DEVSTORM
-token="TOKEN"
+token="483669553:AAEScKdtQhydg9kh4pBQxwuOBpn6WPNWy98"
 install() {
      cd tg
   sudo add-apt-repository ppa:ubuntu-toolchain-r/test

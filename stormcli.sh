@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-cd $HOME/DEVSTIRM
-token_="351460214:AAHEXlncjPyhF22zlKToJa6fAGQlnJU8D6E" 
+cd $HOME/DEVSTORM
+token=""
 install() {
 	    cd tg
 		sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
@@ -59,43 +59,33 @@ function logo_play() {
 if [ "$1" = "install" ]; then
   install
   else
-
+  function create_config( )
+	io.write('\n\27[1;33mادخل ايدي حسابك لتصبح مطور 👇 \27[0;39;49m\n')
+	local SUDO = tonumber(io.read())
+if not tostring(SUDO):match('%d+') then
+    SUDO = 373906612
+  end
+  	io.write('\n\27[1;33mارسل توكن البوت الان 👇 \27[0;39;49m\n')
+	local token = io.read()
+	else
 if [ ! -f ./tg/tgcli ]; then
     echo "tg not found"
     echo "Run $0 install"
     exit 1
- fi
-if [ ! $token_ ]; then
-echo -e ""
-
-echo -e ""
-
-  echo -e "\e[31;1mToken Not found\e"
-
- exit 1
-
- fi
-   print_logo
-   echo -e "\033[38;5;208m"
-   echo -e "
- __   ___________   ___     _____     __  __
-/  |  |___   ___|  / _ \   | ___ }   |  \/  |
-\_ \      | |     | | | |  | |_) }   | |\/| |
- _) |     | |     | |_| |  |  _< \   | |  | |
-|__/      |_|      \___/   |_|  \_\  |_|  |_|
- BY @TAHAJ20 DEV : TAHAJ20            
-"
-   echo -e "    "
-   echo -e "   "
-   echo -e "   "
-   echo -e "     "
-   echo -e "\033[0;00m"
-   echo -e "\e[36m"
-   logo_play
-   #sudo service redis-server restart
-   #./tg/tgcli -s ./bot/bot.lua -l 1 -E $@ --bot=$token_
-curl "https://api.telegram.org/bot"$token_"/sendmessage" -F
-
-./tg/tgcli -s ./bot/bot.lua $@ --bot=$token_
-
 fi
+if [ $token == "" ]; then
+    echo "token not found"
+    echo "Run install again"
+    exit 1
+fi
+ 
+COUNTER=1
+while(true) do
+
+curl "https://api.telegram.org/bot"$token"/sendmessage" -F
+./tg/tgcli -s ./bot/bot.lua $@ --bot=$token
+
+let COUNTER=COUNTER+1 
+done
+
+

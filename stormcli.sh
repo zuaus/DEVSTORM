@@ -3,24 +3,25 @@
 cd $HOME/DEVSTORM
 token=""
 install() {
-	    cd tg
-		sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-		sudo apt-get install g++-4.7 -y c++-4.7 -y
-		sudo apt-get update
-		sudo apt-get upgrade
-		sudo apt-get install libreadline-dev -y libconfig-dev -y libssl-dev -y lua5.2 -y liblua5.2-dev -y lua-socket -y lua-sec -y lua-expat -y libevent-dev -y make unzip git redis-server autoconf g++ -y libjansson-dev -y libpython-dev -y expat libexpat1-dev -y
-		sudo apt-get install screen -y
-		sudo apt-get install tmux -y
-		sudo apt-get install libstdc++6 -y
-		sudo apt-get install lua-lgi -y
-		sudo apt-get install libnotify-dev -y
-		sudo service redis-server restart
-		wget https://valtman.name/files/telegram-cli-1222
-		mv telegram-cli-1222 tgcli
-		chmod +x tgcli
-		cd ..
-		chmod +x bot
-		chmod +x tg
+	    sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  sudo apt-get install g++-4.7 -y c++-4.7 -y
+  sudo apt-get update
+  sudo apt-get upgrade
+  sudo apt-get install libreadline-dev -y libconfig-dev -y libssl-dev -y lua5.2 -y liblua5.2-dev -y lua-socket -y lua-sec -y lua-expat -y libevent-dev -y make unzip git redis-server autoconf g++ -y libjansson-dev -y libpython-dev -y expat libexpat1-dev -y
+  sudo apt-get install screen -y
+  sudo apt-get install tmux -y
+  sudo apt-get install libstdc++6 -y
+  sudo apt-get install lua-lgi -y
+  sudo apt-get install libnotify-dev -y
+  wget https://valtman.name/files/telegram-cli-1222
+  mv telegram-cli-1222 tgcli
+  chmod +x tgcli
+  cd ..
+  chmod +x tg
+  lua ./bot/bot.lua
+  chmod +x stormcli.sh
+  ./stormcli.sh
+
 }
 
 function print_logo() {
@@ -59,15 +60,6 @@ function logo_play() {
 if [ "$1" = "install" ]; then
   install
   else
-  function create_config( )
-	io.write('\n\27[1;33mادخل ايدي حسابك لتصبح مطور 👇 \27[0;39;49m\n')
-	local SUDO = tonumber(io.read())
-if not tostring(SUDO):match('%d+') then
-    SUDO = 373906612
-  end
-  	io.write('\n\27[1;33mارسل توكن البوت الان 👇 \27[0;39;49m\n')
-	local token = io.read()
-	else
 if [ ! -f ./tg/tgcli ]; then
     echo "tg not found"
     echo "Run $0 install"

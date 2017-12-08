@@ -21,5 +21,5 @@ cd $THIS_DIR
   cd ..
   chmod +x tg
   lua ./bot/bot.lua
-  chmod +x STORM.sh
-  ./STORM.sh
+  chmod +x taha.sh
+  ./taha.sh

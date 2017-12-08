@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd $HOME/SV
+cd $HOME/DEVSTORM
 
 install() {
      cd libs
@@ -71,7 +71,7 @@ elif [ "$1" = "update" ]; then
 
  update
 else
-if [ ! -f ./tg/tdcli ]; then
+if [ ! -f ./tg/tgcli ]; then
     echo "tgcli not found"
     echo "Run $0 install"
     exit 1
@@ -80,5 +80,5 @@ fi
  beyondteam
  logo_play
  #sudo service redis-server  restart
- ./tg/tdcli -s ./bot/bot.lua $@
+ ./tg/tgcli -s ./bot/bot.lua $@
 fi

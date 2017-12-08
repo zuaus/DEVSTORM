@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-token_="351460214:AAHEXlncjPyhF22zlKToJa6fAGQlnJU8D6E" 
-
-function print_logo() {
-   cd tg
+cd $HOME/DEVSTORM
+token_="token" 
+install() {
+	    cd tg
 		sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 		sudo apt-get install g++-4.7 -y c++-4.7 -y
 		sudo apt-get update
@@ -24,143 +24,57 @@ function print_logo() {
 }
 
 function print_logo() {
-	echo -e "
- __   ___________   ___     _____     __  __
-/  |  |___   ___|  / _ \   | ___ }   |  \/  |
-\_ \      | |     | | | |  | |_) }   | |\/| |
- _) |     | |     | |_| |  |  _< \   | |  | |
-|__/      |_|      \___/   |_|  \_\  |_|  |_|
- BY @TAHAJ20 DEV : TAHAJ20            "
-	echo -e " "
-	echo -e " "
-	echo -e " "
-	echo -e " "
-	echo
-
- echo -e "\e[38;5;77m" 
-
-echo -e "  "
-echo -e "  "
-echo -e "  "
-echo -e "  "
-
-echo -e "  \e[38;5;88m"
-
-echo -e "
- __   ___________   ___     _____     __  __
-/  |  |___   ___|  / _ \   | ___ }   |  \/  |
-\_ \      | |     | | | |  | |_) }   | |\/| |
- _) |     | |     | |_| |  |  _< \   | |  | |
-|__/      |_|      \___/   |_|  \_\  |_|  |_|
- BY @TAHAJ20 DEV : TAHAJ20            
-"
-
-echo -e " "
-
-echo -e " "
-
-echo -e " "
-
-echo -e "
- __   ___________   ___     _____     __  __
-/  |  |___   ___|  / _ \   | ___ }   |  \/  |
-\_ \      | |     | | | |  | |_) }   | |\/| |
- _) |     | |     | |_| |  |  _< \   | |  | |
-|__/      |_|      \___/   |_|  \_\  |_|  |_|
- BY @TAHAJ20 DEV : TAHAJ20            
-"
-
-echo -e " "
-
-echo -e " "
-
-echo -e " "
-
-echo -e " "
-
+	echo -e "\033[38;5;600m"
+	echo -e "          ____  ____     _____"
+	echo -e "         |  _ )|  _ \   |_   _|___ ____   __  __"
+	echo -e "         |  _ \| |_) )    | |/ .__|  _ \_|  \/  |"
+	echo -e "         |____/|____/     |_|\____/\_____|_/\/\_|"
+	echo -e "\n\e[36m"
 }
 
+function logo_play() {
+    declare -A txtlogo
+    seconds="0.010"
+    txtlogo[1]=" ____  ____     _____"
+    txtlogo[2]="|  _ )|  _ \   |_   _|___ ____   __  __"
+    txtlogo[3]="|  _ \| |_) )    | |/ .__|  _ \_|  \/  |"
+    txtlogo[4]="|____/|____/     |_|\____/\_____|_/\/\_|"
+    printf "\033[38;5;600m\t"
+    for i in ${!txtlogo[@]}; do
+        for x in `seq 0 ${#txtlogo[$i]}`; do
+            printf "${txtlogo[$i]:$x:1}"
+            sleep $seconds
+        done
+        printf "\n\t"
+    done
+    printf "\n"
+}
+
+if [ "$1" = "install" ]; then
+  install
+  else
 
 if [ ! -f ./tg/tgcli ]; then
-
-echo -e ""
-
-echo -e " "
-
-echo -e " "
-
-echo -e "
- __   ___________   ___     _____     __  __
-/  |  |___   ___|  / _ \   | ___ }   |  \/  |
-\_ \      | |     | | | |  | |_) }   | |\/| |
- _) |     | |     | |_| |  |  _< \   | |  | |
-|__/      |_|      \___/   |_|  \_\  |_|  |_|
- BY @TAHAJ20 DEV : TAHAJ20            
-"
-
-echo -e " "
-
-echo -e "  "
-
-echo -e " "
-
-    echo " "
-
+    echo "tg not found"
     echo "Run $0 install"
-
     exit 1
-
- fi
-
-if [ ! $token_ ]; then
-
-echo -e ""
-
-echo -e ""
-
-  echo -e "\e[31;1mToken Not found\e"
-
- exit 1
-
  fi
 
 
-
-  print_logo
-
-   echo -e ""
-
-echo -e ""
-
-echo -e " "
-
-echo -e "  "
-
-echo -e "  "
-
-echo -e "
- __   ___________   ___     _____     __  __
-/  |  |___   ___|  / _ \   | ___ }   |  \/  |
-\_ \      | |     | | | |  | |_) }   | |\/| |
- _) |     | |     | |_| |  |  _< \   | |  | |
-|__/      |_|      \___/   |_|  \_\  |_|  |_|
- BY @TAHAJ20 DEV : TAHAJ20            
-"
-
-echo -e "  "
-
-echo -e "  "
-
-echo -e "  "
-
-echo -e ""
-
-echo -e " "
-
-echo -e " "
-
-
-curl "https://api.telegram.org/bot"$token_"/sendmessage" -F
+   print_logo
+   echo -e "\033[38;5;208m"
+   echo -e "     >>>>                       We Are Not Attacker                             "
+   echo -e "     >>>>                       We Are Not Alliance                             "
+   echo -e "     >>>>                       We Are Family                                   "
+   echo -e "     >>>>                       We Are The Best :-)                             "
+   echo -e "     >>>>                       @ProtectionTeam                                     "
+   echo -e "\033[0;00m"
+   echo -e "\e[36m"
+   logo_play
+   #sudo service redis-server restart
+   #./tg/tgcli -s ./bot/bot.lua -l 1 -E $@
+   curl "https://api.telegram.org/bot"$token_"/sendmessage" -F
 
 ./tg/tgcli -s ./bot/bot.lua $@ --bot=$token_
-if
+
+fi

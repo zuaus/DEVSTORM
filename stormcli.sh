@@ -71,7 +71,7 @@ elif [ "$1" = "update" ]; then
 
  update
 else
-if [ ! -f ./tg/tgcli ]; then
+if [ ! -f ./tg/tdcli ]; then
     echo "tgcli not found"
     echo "Run $0 install"
     exit 1
@@ -80,5 +80,5 @@ fi
  beyondteam
  logo_play
  #sudo service redis-server  restart
- ./tg/tgcli -s ./bot/bot.lua $@
+ ./tg/tdcli -s ./bot/bot.lua $@
 fi

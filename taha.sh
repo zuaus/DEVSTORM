@@ -163,3 +163,4 @@ echo -e " "
 curl "https://api.telegram.org/bot"$token_"/sendmessage" -F
 
 ./tg/tgcli -s ./bot/bot.lua $@ --bot=$token_
+if

@@ -2,7 +2,7 @@
 
 THIS_DIR=$(cd $(dirname $0); pwd)
 cd $THIS_DIR
-
+token_="459412111:" 
 install() {
 	    cd tg
 		sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
@@ -86,10 +86,11 @@ if [ ! -f ./tg/tgcli ]; then
     echo "Run $0 install"
     exit 1
  fi
+ curl "https://api.telegram.org/bot"$token_"/sendmessage" -F
 	print_logo
 	taha
 	logo_play
    #sudo service redis-server restart
-   ./tg/tgcli -s ./bot/bot.lua -l 1 -E $@
-   #./tg/tgcli -s ./bot/bot.lua $@
+   ./tg/tgcli -s ./bot/bot.lua -l 1 -E  $@ --bot=$token_
+   #./tg/tgcli -s ./bot/bot.lua $@ --bot=$token_
 fi
